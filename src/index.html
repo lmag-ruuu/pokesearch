@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta hhtp-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+  </head>
+  <body>
+    <div class="title">
+      <form class="search">
+        <label for="" class="search-input">PokeSearch</label>
+        <input
+          autocomplete="off"
+          list="names"
+          type="search"
+          class="search__field"
+          placeholder="Pokemon name"
+          required
+        />
+        <datalist id="names"> </datalist>
+        <input type="submit" value="Search" class="search-btn"/>
+      </form>
+    </div>
+    <div class="container"></div>
+  </body>
+</html>
