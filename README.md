@@ -9,3 +9,9 @@ Se mostrará mas información como estadisticas
 y objetos que lleva en estado salvaje  
 Hasta ahora solo está hecho el javascript  
 Luego con algo de tiempo mejoraré su apariencia
+
+Las tarjetas (del resultado de busqueda)  
+Las realicé siguiendo un tutorial en youtube  
+En el tutorial las hacen con html  
+Yo hice una función en javascript que las hace.  
+El canal se llama Programación Accesible  
