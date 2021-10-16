@@ -16,6 +16,7 @@ PokeObj.pokeDatas = [""];
 const filter = () => {
   searchView.clearDataList();
   const text = searchView.getInput().toLowerCase();
+  // const regex = /^${text}/g;
   elements.results.addEventListener("click", clickCard);
   if (text) {
     let count = 0;
@@ -41,7 +42,6 @@ const searchCtrl = async () => {
   //Look for pokes on input
   if (PokeObj.listToSearch.length > 0) {
     //If exists
-
     for (let i = 0; i < PokeObj.listToSearch.length; i++) {
       PokeObj.search = new Search(PokeObj.listToSearch[i]);
       searchView.clearInput();
@@ -49,14 +49,17 @@ const searchCtrl = async () => {
         await PokeObj.search.getResults();
         const pokemo = new Pokemon(PokeObj.search.data);
         PokeObj.pokeDatas.push(pokemo);
-        searchView.renderPokemon(pokemo);
       } catch (err) {
         console.log(err);
         alert("Something went wrong!");
       }
     }
+    //Render all pokes at end
+    PokeObj.pokeDatas.forEach((poke) => {
+      searchView.renderPokemon(poke);
+    });
   } else {
-    alert("That pokémon was not found!");
+    alert("That pokemon was not found!");
     searchView.clearInput();
   }
 };
