@@ -3,7 +3,7 @@ import { elements, colorTypes } from "./base";
 export const renderPokeData = (pokemon) => {
   //First section
   const sectionPokeData = document.createElement("section");
-  sectionPokeData.className = 'section1';
+  sectionPokeData.className = "section1";
 
   //Img container
   const divImgC = document.createElement("div");
@@ -33,7 +33,7 @@ export const renderPokeData = (pokemon) => {
   const divItems = putItems(pokemon.items);
   sectionPokeData.appendChild(divItems);
 
-  elements.container.appendChild(sectionPokeData);
+  elements.results.appendChild(sectionPokeData);
 
   //2º SECTION
   const sectionPokeStats = document.createElement("section");
@@ -56,7 +56,7 @@ export const renderPokeData = (pokemon) => {
 
   //Add table on divColum
   divColum.appendChild(tableStat);
-  divColum.appendChild(document.createElement('br'));
+  divColum.appendChild(document.createElement("br"));
 
   //fill abilities
   const divAbilities = document.createElement("div");
@@ -70,7 +70,7 @@ export const renderPokeData = (pokemon) => {
   sectionPokeStats.appendChild(divColum);
 
   //add new section on container
-  elements.container.appendChild(sectionPokeStats);
+  elements.results.appendChild(sectionPokeStats);
 };
 
 export const createImg = (img) => {
@@ -138,7 +138,7 @@ const fillTable = (table, stats) => {
 
 const showAbilities = (div, ability) => {
   ability.forEach((ability) => {
-    const ab = document.createElement('div');
+    const ab = document.createElement("div");
     ab.textContent = ability.ability.name;
     div.appendChild(ab);
   });

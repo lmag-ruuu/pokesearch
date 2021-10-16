@@ -1,5 +1,11 @@
 import { elements } from "./base.js";
-import { createImg, createStyle, putId, putName, putTypes } from "./pokemonView.js";
+import {
+  createImg,
+  createStyle,
+  putId,
+  putName,
+  putTypes,
+} from "./pokemonView.js";
 
 //Get and clear input!
 export const getInput = () => elements.searchField.value;
@@ -11,17 +17,17 @@ export const clearDataList = () => {
   elements.dataNames.innerHTML = "";
 };
 
-export const renderDataList = poke => {
+export const renderDataList = (poke) => {
   const markup = `
     <option value="${poke}">
-  `
-  elements.dataNames.insertAdjacentHTML('beforeend', markup);
-}
+  `;
+  elements.dataNames.insertAdjacentHTML("beforeend", markup);
+};
 
-export const renderPokemon = pokemon => {
+export const renderPokemon = (pokemon) => {
   //Div principal
-  const divPrincipal = document.createElement('div');
-  divPrincipal.className = 'poke-card';
+  const divPrincipal = document.createElement("div");
+  divPrincipal.className = "poke-card";
   divPrincipal.dataset.id = pokemon.id;
 
   //Name
@@ -29,8 +35,8 @@ export const renderPokemon = pokemon => {
   divPrincipal.appendChild(pokeName);
 
   //Img Container
-  const divImgC = document.createElement('div');
-  divImgC.className = 'img-container';
+  const divImgC = document.createElement("div");
+  divImgC.className = "img-container";
 
   //Img
   const img = createImg(pokemon.img);
@@ -47,15 +53,14 @@ export const renderPokemon = pokemon => {
 
   //Types
   const divTypes = putTypes(pokemon.types);
-  divTypes.className = 'poke-types';
+  divTypes.className = "poke-types";
   //Add to div types
   divPrincipal.appendChild(divTypes);
-  
-  //Finally, div container
-  elements.container.appendChild(divPrincipal);
 
+  //Finally, div container
+  elements.results.appendChild(divPrincipal);
 };
 
 export const clearPokemon = () => {
-  elements.container.innerHTML = '';
-}
+  elements.results.innerHTML = "";
+};

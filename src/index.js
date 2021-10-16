@@ -16,7 +16,7 @@ PokeObj.pokeDatas = [""];
 const filter = () => {
   searchView.clearDataList();
   const text = searchView.getInput().toLowerCase();
-  elements.container.addEventListener("click", clickCard);
+  elements.results.addEventListener("click", clickCard);
   if (text) {
     let count = 0;
     PokeObj.listToSearch.splice(0, PokeObj.listToSearch.length);
@@ -66,7 +66,7 @@ const pokeCtrl = (id) => {
   searchView.clearPokemon();
   const poke = PokeObj.pokeDatas.find((poke) => poke.id === id);
   pokemonView.renderPokeData(poke);
-  elements.container.removeEventListener("click", clickCard);
+  elements.results.removeEventListener("click", clickCard);
 };
 
 //Filter input to search name

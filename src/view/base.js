@@ -3,7 +3,7 @@ export const elements = {
   searchForm: document.querySelector(".search"),
   searchField: document.querySelector(".search-field"),
   dataNames: document.getElementById("names"),
-  container: document.querySelector(".results"),
+  results: document.querySelector(".results"),
   searchInput: document.querySelector(".search-input"),
   results: document.querySelector(".results"),
   title: document.querySelector(".title"),
