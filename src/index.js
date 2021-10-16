@@ -1,4 +1,4 @@
-import "../src/css/pokeStyle.css";
+import "../src/css/style.css";
 import Search from "./model/Search";
 import Pokemon from "./model/Pokemon";
 import * as pokemonView from "./view/pokemonView";
@@ -8,31 +8,30 @@ import { dictionary } from "./model/dictionary";
 
 //State pokemon
 const PokeObj = {};
-PokeObj.listToSearch = [''];
-PokeObj.pokeDatas = [''];
+PokeObj.listToSearch = [""];
+PokeObj.pokeDatas = [""];
 
 /* SEARCH */
 //Type the name in the input and filter first 7 results
 const filter = () => {
   searchView.clearDataList();
   const text = searchView.getInput().toLowerCase();
-  elements.container.addEventListener('click', clickCard);
+  elements.container.addEventListener("click", clickCard);
   if (text) {
     let count = 0;
     PokeObj.listToSearch.splice(0, PokeObj.listToSearch.length);
-    for(let i = 0; i < dictionary.length; i++){
-      if(dictionary[i].indexOf(text) !== -1){
+    for (let i = 0; i < dictionary.length; i++) {
+      if (dictionary[i].indexOf(text) !== -1) {
         count++;
         PokeObj.listToSearch.push(dictionary[i]);
         searchView.renderDataList(dictionary[i]);
       }
-      if(count === 7){
+      if (count === 7) {
         break;
       }
     }
   }
 };
-
 
 //Search and create poke
 const searchCtrl = async () => {
@@ -40,23 +39,24 @@ const searchCtrl = async () => {
   searchView.clearPokemon();
   PokeObj.pokeDatas.splice(0, PokeObj.pokeDatas.length);
   //Look for pokes on input
-  if (PokeObj.listToSearch.length > 0) {//If exists
+  if (PokeObj.listToSearch.length > 0) {
+    //If exists
 
-    for(let i = 0; i < PokeObj.listToSearch.length; i++){
+    for (let i = 0; i < PokeObj.listToSearch.length; i++) {
       PokeObj.search = new Search(PokeObj.listToSearch[i]);
       searchView.clearInput();
-      try{
+      try {
         await PokeObj.search.getResults();
-        const pokemo = new Pokemon (PokeObj.search.data);
+        const pokemo = new Pokemon(PokeObj.search.data);
         PokeObj.pokeDatas.push(pokemo);
         searchView.renderPokemon(pokemo);
-      }catch (err) {
+      } catch (err) {
         console.log(err);
         alert("Something went wrong!");
       }
     }
-  }else{
-    alert('That pokémon was not found!');
+  } else {
+    alert("That pokémon was not found!");
     searchView.clearInput();
   }
 };
@@ -64,9 +64,9 @@ const searchCtrl = async () => {
 //Now, click on poke to view full data
 const pokeCtrl = (id) => {
   searchView.clearPokemon();
-  const poke = PokeObj.pokeDatas.find ( poke => poke.id === id );
+  const poke = PokeObj.pokeDatas.find((poke) => poke.id === id);
   pokemonView.renderPokeData(poke);
-  elements.container.removeEventListener('click', clickCard);
+  elements.container.removeEventListener("click", clickCard);
 };
 
 //Filter input to search name
@@ -78,6 +78,6 @@ elements.searchForm.addEventListener("submit", (el) => {
 });
 //Click on pokemon card
 const clickCard = (el) => {
-  const id = el.target.closest('.poke-card').dataset.id;
+  const id = el.target.closest(".poke-card").dataset.id;
   pokeCtrl(parseInt(id));
-}
+};

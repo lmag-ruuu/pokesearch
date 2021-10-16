@@ -1,11 +1,12 @@
-import ico from '../images/pikachuico.png';
+import ico from "../images/pokeball.png";
 export const elements = {
   searchForm: document.querySelector(".search"),
-  searchField: document.querySelector(".search__field"),
+  searchField: document.querySelector(".search-field"),
   dataNames: document.getElementById("names"),
-  container: document.querySelector(".container"),
-  searchInput: document.querySelector('.search-input'),
-  results: document.querySelector('.results'),
+  container: document.querySelector(".results"),
+  searchInput: document.querySelector(".search-input"),
+  results: document.querySelector(".results"),
+  title: document.querySelector(".title"),
 };
 
 export const colorTypes = {
@@ -27,11 +28,11 @@ export const colorTypes = {
   fire: "#FF675C",
   water: "#0596C7",
   ice: "#AFEAFD",
-  default: "#2A1A1F"
+  default: "#2A1A1F",
 };
 
 //Add icon ad side search
 const myIco = new Image();
 myIco.src = ico;
 myIco.style = "width:40px; height:40px;";
-elements.searchInput.appendChild(myIco);
+elements.title.appendChild(myIco);
