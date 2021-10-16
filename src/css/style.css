@@ -197,6 +197,7 @@ a {
   margin-bottom: 1.6rem;
   display: flex;
   gap: 0.5rem;
+  text-transform: uppercase;
 }
 
 .poke-card:hover {
