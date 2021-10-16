@@ -200,7 +200,7 @@ a {
 }
 
 .poke-card:hover {
-  box-shadow: 1px 1px 1rem #c92a2a;
+  box-shadow: 1px 1px 1rem 0.1px #c92a2a;
   background-color: #ffc9c9;
 }
 
