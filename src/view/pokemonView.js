@@ -75,7 +75,6 @@ export const renderPokeData = (pokemon) => {
 
 export const createImg = (img) => {
   const divImg = document.createElement("img");
-  divImg.className = "poke-img";
   divImg.setAttribute("src", img);
   return divImg;
 };
@@ -91,12 +90,14 @@ export const createStyle = (img, types) => {
 
 export const putName = (namePoke) => {
   const divName = document.createElement("div");
+  divName.className = "name";
   divName.textContent = namePoke;
   return divName;
 };
 
 export const putId = (pokeId) => {
   const divId = document.createElement("div");
+  divId.className = "number";
   divId.textContent = `Nº ${pokeId} `;
   return divId;
 };
@@ -104,8 +105,7 @@ export const putId = (pokeId) => {
 export const putTypes = (types) => {
   const typeId = document.createElement("div");
   types.forEach((type) => {
-    const typeText = document.createElement("div");
-    typeText.style.textShadow = "2px 2px 2px black";
+    const typeText = document.createElement("span");
     typeText.style.color = colorTypes[type.type.name];
     typeText.textContent = type.type.name;
     typeId.appendChild(typeText);
