@@ -16,13 +16,14 @@ PokeObj.pokeDatas = [""];
 const filter = () => {
   searchView.clearDataList();
   const text = searchView.getInput().toLowerCase();
-  // const regex = /^${text}/g;
-  elements.results.addEventListener("click", clickCard);
+  const regexp = new RegExp(`^${text}`, "gi");
   if (text) {
     let count = 0;
+    //Clear all old data
     PokeObj.listToSearch.splice(0, PokeObj.listToSearch.length);
+    //Create for new datas
     for (let i = 0; i < dictionary.length; i++) {
-      if (dictionary[i].indexOf(text) !== -1) {
+      if (regexp.test(dictionary[i])) {
         count++;
         PokeObj.listToSearch.push(dictionary[i]);
         searchView.renderDataList(dictionary[i]);
@@ -58,13 +59,14 @@ const searchCtrl = async () => {
     PokeObj.pokeDatas.forEach((poke) => {
       searchView.renderPokemon(poke);
     });
+    elements.results.addEventListener("click", clickCard);
   } else {
     alert("That pokemon was not found!");
     searchView.clearInput();
   }
 };
 
-//Now, click on poke to view full data
+// Now, click on poke to view full data
 const pokeCtrl = (id) => {
   searchView.clearPokemon();
   const poke = PokeObj.pokeDatas.find((poke) => poke.id === id);
@@ -81,6 +83,7 @@ elements.searchForm.addEventListener("submit", (el) => {
 });
 //Click on pokemon card
 const clickCard = (el) => {
-  const id = el.target.closest(".poke-card").dataset.id;
+  const id = el.target.closest(".card").dataset.id;
+  // console.log(id);
   pokeCtrl(parseInt(id));
 };

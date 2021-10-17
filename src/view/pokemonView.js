@@ -106,7 +106,7 @@ export const putTypes = (types) => {
   const typeId = document.createElement("div");
   types.forEach((type) => {
     const typeText = document.createElement("span");
-    typeText.style.color = colorTypes[type.type.name];
+    typeText.style.backgroundColor = colorTypes[type.type.name];
     typeText.textContent = type.type.name;
     typeId.appendChild(typeText);
   });

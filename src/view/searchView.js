@@ -21,12 +21,12 @@ export const renderDataList = (poke) => {
 export const renderPokemon = (pokemon) => {
   //Div principal
   const divPrincipal = document.createElement("div");
-  divPrincipal.className = "card";
-  divPrincipal.dataset.id = pokemon.id;
 
   //Link container
   const linkPoke = document.createElement("a");
   linkPoke.href = "#";
+  linkPoke.dataset.id = pokemon.id;
+  linkPoke.className = "card";
 
   //create poke-card
   const pokeCard = document.createElement("div");
@@ -67,7 +67,8 @@ export const renderPokemon = (pokemon) => {
 
   //Finally, poke on link
   linkPoke.appendChild(pokeCard);
-  elements.results.appendChild(linkPoke);
+  divPrincipal.appendChild(linkPoke);
+  elements.results.appendChild(divPrincipal);
 };
 
 export const clearPokemon = () => {
