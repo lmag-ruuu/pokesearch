@@ -21,6 +21,7 @@ export const renderDataList = (poke) => {
 export const renderPokemon = (pokemon) => {
   //Div principal
   const divPrincipal = document.createElement("div");
+  divPrincipal.className = "result-content";
 
   //Link container
   const linkPoke = document.createElement("a");

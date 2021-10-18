@@ -16,6 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #fff5f5;
 }
 
 .btn-logo {
@@ -55,9 +56,9 @@ body {
 
 .container {
   width: 100rem;
-  height: 100vh;
-  background-color: #fff5f5;
+  height: 65rem;
   margin: 0 auto;
+  background-color: #fff5f5;
 }
 
 .pokesearch {
@@ -73,6 +74,7 @@ body {
   );
   background-size: cover;
   background-position: center;
+  border-radius: 0.4rem;
 }
 
 .title {
@@ -150,10 +152,6 @@ a {
   display: inline-block;
 }
 
-.card {
-  /* cursor: pointer; */
-}
-
 .poke-card {
   width: 22rem;
   border: 1px solid #ffc9c9;
@@ -167,6 +165,11 @@ a {
     rgba(255, 135, 135, 0.35),
     rgba(255, 245, 245, 0.35)
   );
+}
+
+.result-content {
+  display: flex;
+  justify-content: center;
 }
 
 .image {
