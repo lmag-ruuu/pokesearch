@@ -918,552 +918,232 @@ export const dictionary = [
   "marowak-alola",
 ];
 
-//Tipos
-
-/*
-{
-    "bug": {
-        "attack": {
-            "double": [
-                "psychic",
-                "grass",
-                "dark"
-            ],
-            "half": [
-                "fighting",
-                "fire",
-                "flying",
-                "ghost",
-                "poison",
-                "steel",
-                "fairy"
-            ],
-            "zero": []
-        },
-        "defense": {
-            "half": [
-                "fighting",
-                "grass",
-                "ground"
-            ],
-            "double": [
-                "fire",
-                "flying",
-                "rock"
-            ],
-            "zero": []
-        }
+export const types = {
+  bug: {
+    attack: {
+      double: ["psychic", "grass", "dark"],
+      half: ["fighting", "fire", "flying", "ghost", "poison", "steel", "fairy"],
+      zero: [],
     },
-    "dark": {
-        "attack": {
-            "double": [
-                "ghost",
-                "psychic"
-            ],
-            "half": [
-                "dark",
-                "fighting",
-                "fairy"
-            ],
-            "zero": []
-        },
-        "defense": {
-            "half": [
-                "dark",
-                "ghost"
-            ],
-            "double": [
-                "bug",
-                "fighting",
-                "fairy"
-            ],
-            "zero": [
-                "psychic"
-            ]
-        }
+    defense: {
+      half: ["fighting", "grass", "ground"],
+      double: ["fire", "flying", "rock"],
+      zero: [],
     },
-    "dragon": {
-        "attack": {
-            "double": [
-                "dragon"
-            ],
-            "half": [
-                "steel"
-            ],
-            "zero": [
-                "fairy"
-            ]
-        },
-        "defense": {
-            "half": [
-                "electric",
-                "fire",
-                "grass",
-                "water"
-            ],
-            "double": [
-                "dragon",
-                "ice",
-                "fairy"
-            ],
-            "zero": []
-        }
+  },
+  dark: {
+    attack: {
+      double: ["ghost", "psychic"],
+      half: ["dark", "fighting", "fairy"],
+      zero: [],
     },
-    "electric": {
-        "attack": {
-            "double": [
-                "flying",
-                "water"
-            ],
-            "half": [
-                "dragon",
-                "electric",
-                "grass"
-            ],
-            "zero": [
-                "ground"
-            ]
-        },
-        "defense": {
-            "half": [
-                "electric",
-                "flying",
-                "steel"
-            ],
-            "double": [
-                "ground"
-            ],
-            "zero": []
-        }
+    defense: {
+      half: ["dark", "ghost"],
+      double: ["bug", "fighting", "fairy"],
+      zero: ["psychic"],
     },
-    "fairy": {
-        "attack": {
-            "double": [
-                "dark",
-                "dragon",
-                "fighting"
-            ],
-            "half": [
-                "fire",
-                "poison",
-                "steel"
-            ],
-            "zero": []
-        },
-        "defense": {
-            "half": [
-                "bug",
-                "dark",
-                "fighting"
-            ],
-            "double": [
-                "poison",
-                "steel"
-            ],
-            "zero": [
-                "dragon"
-            ]
-        }
+  },
+  dragon: {
+    attack: {
+      double: ["dragon"],
+      half: ["steel"],
+      zero: ["fairy"],
     },
-    "fighting": {
-        "attack": {
-            "double": [
-                "dark",
-                "ice",
-                "normal",
-                "rock",
-                "steel"
-            ],
-            "half": [
-                "bug",
-                "fairy",
-                "flying",
-                "poison",
-                "psychic"
-            ],
-            "zero": [
-                "ghost"
-            ]
-        },
-        "defense": {
-            "half": [
-                "bug",
-                "dark",
-                "rock"
-            ],
-            "double": [
-                "fairy",
-                "flying",
-                "psychic"
-            ],
-            "zero": []
-        }
+    defense: {
+      half: ["electric", "fire", "grass", "water"],
+      double: ["dragon", "ice", "fairy"],
+      zero: [],
     },
-    "fire": {
-        "attack": {
-            "double": [
-                "bug",
-                "grass",
-                "ice",
-                "steel"
-            ],
-            "half": [
-                "dragon",
-                "fire",
-                "rock",
-                "water"
-            ],
-            "zero": []
-        },
-        "defense": {
-            "half": [
-                "bug",
-                "fairy",
-                "fire",
-                "grass",
-                "ice",
-                "steel"
-            ],
-            "double": [
-                "bug",
-                "fire",
-                "flying",
-                "ice",
-                "poison"
-            ],
-            "zero": []
-        }
+  },
+  electric: {
+    attack: {
+      double: ["flying", "water"],
+      half: ["dragon", "electric", "grass"],
+      zero: ["ground"],
     },
-    "flying": {
-        "attack": {
-            "double": [
-                "bug",
-                "fighting",
-                "grass"
-            ],
-            "half": [
-                "electric",
-                "rock",
-                "steel"
-            ],
-            "zero": []
-        },
-        "defense": {
-            "half": [
-                "bug",
-                "fighting",
-                "grass"
-            ],
-            "double": [
-                "electric",
-                "ice",
-                "rock"
-            ],
-            "zero": [
-                "ground"
-            ]
-        }
+    defense: {
+      half: ["electric", "flying", "steel"],
+      double: ["ground"],
+      zero: [],
     },
-    "ghost": {
-        "attack": {
-            "double": [
-                "ghost",
-                "psychic"
-            ],
-            "half": [
-                "dark"
-            ],
-            "zero": [
-                "normal"
-            ]
-        },
-        "defense": {
-            "half": [
-                "bug",
-                "poison"
-            ],
-            "double": [
-                "ghost",
-                "dark"
-            ],
-            "zero": [
-                "normal",
-                "fighting"
-            ]
-        }
+  },
+  fairy: {
+    attack: {
+      double: ["dark", "dragon", "fighting"],
+      half: ["fire", "poison", "steel"],
+      zero: [],
     },
-    "grass": {
-        "attack": {
-            "double": [
-                "ground",
-                "rock",
-                "water"
-            ],
-            "half": [
-                "bug",
-                "dragon",
-                "fire",
-                "flying",
-                "grass",
-                "poison",
-                "steel"
-            ],
-            "zero": []
-        },
-        "defense": {
-            "half": [
-                "electric",
-                "grass",
-                "ground",
-                "water"
-            ],
-            "double": [
-                "bug",
-                "fire",
-                "flying",
-                "ice",
-                "poison"
-            ],
-            "zero": []
-        }
+    defense: {
+      half: ["bug", "dark", "fighting"],
+      double: ["poison", "steel"],
+      zero: ["dragon"],
     },
-    "ground": {
-        "attack": {
-            "double": [
-                "electric",
-                "fire",
-                "poison",
-                "rock",
-                "steel"
-            ],
-            "half": [
-                "bug",
-                "grass"
-            ],
-            "zero": [
-                "flying"
-            ]
-        },
-        "defense": {
-            "half": [
-                "poison",
-                "rock"
-            ],
-            "double": [
-                "grass",
-                "ice",
-                "water"
-            ],
-            "zero": [
-                "electric"
-            ]
-        }
+  },
+  fighting: {
+    attack: {
+      double: ["dark", "ice", "normal", "rock", "steel"],
+      half: ["bug", "fairy", "flying", "poison", "psychic"],
+      zero: ["ghost"],
     },
-    "ice": {
-        "attack": {
-            "double": [
-                "dragon",
-                "flying",
-                "grass",
-                "ground"
-            ],
-            "half": [
-                "fire",
-                "ice",
-                "steel",
-                "water"
-            ],
-            "zero": []
-        },
-        "defense": {
-            "half": [
-                "ice"
-            ],
-            "double": [
-                "fighting",
-                "fire",
-                "rock",
-                "steel"
-            ],
-            "zero": []
-        }
+    defense: {
+      half: ["bug", "dark", "rock"],
+      double: ["fairy", "flying", "psychic"],
+      zero: [],
     },
-    "normal": {
-        "attack": {
-            "double": [],
-            "half": [
-                "rock",
-                "steel"
-            ],
-            "zero": [
-                "ghost"
-            ]
-        },
-        "defense": {
-            "half": [],
-            "double": [
-                "fighting"
-            ],
-            "zero": [
-                "ghost"
-            ]
-        }
+  },
+  fire: {
+    attack: {
+      double: ["bug", "grass", "ice", "steel"],
+      half: ["dragon", "fire", "rock", "water"],
+      zero: [],
     },
-    "poison": {
-        "attack": {
-            "double": [
-                "grass",
-                "fairy"
-            ],
-            "half": [
-                "ghost",
-                "ground",
-                "poison",
-                "rock"
-            ],
-            "zero": [
-                "steel"
-            ]
-        },
-        "defense": {
-            "half": [
-                "bug",
-                "fairy",
-                "fighting",
-                "grass",
-                "poison"
-            ],
-            "double": [
-                "ground",
-                "psychic"
-            ],
-            "zero": []
-        }
+    defense: {
+      half: ["bug", "fairy", "fire", "grass", "ice", "steel"],
+      double: ["bug", "fire", "flying", "ice", "poison"],
+      zero: [],
     },
-    "psychic": {
-        "attack": {
-            "double": [
-                "fighting",
-                "poison"
-            ],
-            "half": [
-                "psychic",
-                "steel"
-            ],
-            "zero": [
-                "dark"
-            ]
-        },
-        "defense": {
-            "half": [
-                "fighting",
-                "psychic"
-            ],
-            "double": [
-                "bug",
-                "dark",
-                "ghost"
-            ],
-            "zero": []
-        }
+  },
+  flying: {
+    attack: {
+      double: ["bug", "fighting", "grass"],
+      half: ["electric", "rock", "steel"],
+      zero: [],
     },
-    "rock": {
-        "attack": {
-            "double": [
-                "bug",
-                "fire",
-                "flying",
-                "ice"
-            ],
-            "half": [
-                "fighting",
-                "ground",
-                "steel"
-            ],
-            "zero": []
-        },
-        "defense": {
-            "half": [
-                "fire",
-                "flying",
-                "normal",
-                "poison"
-            ],
-            "double": [
-                "fighting",
-                "grass",
-                "ground",
-                "steel",
-                "water"
-            ],
-            "zero": []
-        }
+    defense: {
+      half: ["bug", "fighting", "grass"],
+      double: ["electric", "ice", "rock"],
+      zero: ["ground"],
     },
-    "steel": {
-        "attack": {
-            "double": [
-                "fairy",
-                "ice",
-                "rock"
-            ],
-            "half": [
-                "electric",
-                "fire",
-                "steel",
-                "water"
-            ],
-            "zero": []
-        },
-        "defense": {
-            "half": [
-                "bug",
-                "dragon",
-                "fairy",
-                "flying",
-                "grass",
-                "ice",
-                "normal",
-                "psychic",
-                "rock",
-                "steel"
-            ],
-            "double": [
-                "fighting",
-                "fire",
-                "ground"
-            ],
-            "zero": [
-                "poison"
-            ]
-        }
+  },
+  ghost: {
+    attack: {
+      double: ["ghost", "psychic"],
+      half: ["dark"],
+      zero: ["normal"],
     },
-    "water": {
-        "attack": {
-            "double": [
-                "fire",
-                "ground",
-                "rock"
-            ],
-            "half": [
-                "dragon",
-                "grass",
-                "steel"
-            ],
-            "zero": []
-        },
-        "defense": {
-            "half": [
-                "fire",
-                "ice",
-                "steel",
-                "water"
-            ],
-            "double": [
-                "electric",
-                "grass"
-            ],
-            "zero": []
-        }
-    }
-}
-*/
+    defense: {
+      half: ["bug", "poison"],
+      double: ["ghost", "dark"],
+      zero: ["normal", "fighting"],
+    },
+  },
+  grass: {
+    attack: {
+      double: ["ground", "rock", "water"],
+      half: ["bug", "dragon", "fire", "flying", "grass", "poison", "steel"],
+      zero: [],
+    },
+    defense: {
+      half: ["electric", "grass", "ground", "water"],
+      double: ["bug", "fire", "flying", "ice", "poison"],
+      zero: [],
+    },
+  },
+  ground: {
+    attack: {
+      double: ["electric", "fire", "poison", "rock", "steel"],
+      half: ["bug", "grass"],
+      zero: ["flying"],
+    },
+    defense: {
+      half: ["poison", "rock"],
+      double: ["grass", "ice", "water"],
+      zero: ["electric"],
+    },
+  },
+  ice: {
+    attack: {
+      double: ["dragon", "flying", "grass", "ground"],
+      half: ["fire", "ice", "steel", "water"],
+      zero: [],
+    },
+    defense: {
+      half: ["ice"],
+      double: ["fighting", "fire", "rock", "steel"],
+      zero: [],
+    },
+  },
+  normal: {
+    attack: {
+      double: [],
+      half: ["rock", "steel"],
+      zero: ["ghost"],
+    },
+    defense: {
+      half: [],
+      double: ["fighting"],
+      zero: ["ghost"],
+    },
+  },
+  poison: {
+    attack: {
+      double: ["grass", "fairy"],
+      half: ["ghost", "ground", "poison", "rock"],
+      zero: ["steel"],
+    },
+    defense: {
+      half: ["bug", "fairy", "fighting", "grass", "poison"],
+      double: ["ground", "psychic"],
+      zero: [],
+    },
+  },
+  psychic: {
+    attack: {
+      double: ["fighting", "poison"],
+      half: ["psychic", "steel"],
+      zero: ["dark"],
+    },
+    defense: {
+      half: ["fighting", "psychic"],
+      double: ["bug", "dark", "ghost"],
+      zero: [],
+    },
+  },
+  rock: {
+    attack: {
+      double: ["bug", "fire", "flying", "ice"],
+      half: ["fighting", "ground", "steel"],
+      zero: [],
+    },
+    defense: {
+      half: ["fire", "flying", "normal", "poison"],
+      double: ["fighting", "grass", "ground", "steel", "water"],
+      zero: [],
+    },
+  },
+  steel: {
+    attack: {
+      double: ["fairy", "ice", "rock"],
+      half: ["electric", "fire", "steel", "water"],
+      zero: [],
+    },
+    defense: {
+      half: [
+        "bug",
+        "dragon",
+        "fairy",
+        "flying",
+        "grass",
+        "ice",
+        "normal",
+        "psychic",
+        "rock",
+        "steel",
+      ],
+      double: ["fighting", "fire", "ground"],
+      zero: ["poison"],
+    },
+  },
+  water: {
+    attack: {
+      double: ["fire", "ground", "rock"],
+      half: ["dragon", "grass", "steel"],
+      zero: [],
+    },
+    defense: {
+      half: ["fire", "ice", "steel", "water"],
+      double: ["electric", "grass"],
+      zero: [],
+    },
+  },
+};
