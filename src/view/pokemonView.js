@@ -1,37 +1,45 @@
 import { elements, colorTypes } from "./base";
+import { types } from "../model/dictionary";
 
 export const renderPokeData = (pokemon) => {
-  //First section
+  //Create a container for show all pokemon data
+  const divContainer = document.createElement("div");
+  divContainer.className = "result-container";
+
+  //Create First section
   const sectionPokeData = document.createElement("section");
-  sectionPokeData.className = "section1";
+  sectionPokeData.className = "content-img-type";
 
-  //Img container
-  const divImgC = document.createElement("div");
-
+  //Create figure for img
+  const figure = document.createElement("figure");
   //Add img
   const img = createImg(pokemon.img);
-  //Style to img
-  createStyle(img, pokemon.types);
 
-  //add on section
-  divImgC.appendChild(img);
-  sectionPokeData.appendChild(divImgC);
+  //add img on figure
+  figure.appendChild(img);
 
-  //the name
+  //Add figure on section
+  sectionPokeData.appendChild(figure);
+
+  //create div for name and id
+  const idAndName = document.createElement("div");
+  //name
   const pokeName = putName(pokemon.name);
-  sectionPokeData.appendChild(pokeName);
-
-  //Put the id
+  //id
   const pokeId = putId(pokemon.id);
-  sectionPokeData.appendChild(pokeId);
+  //add on div
+  idAndName.appendChild(pokeId);
+  idAndName.appendChild(pokeName);
+  //add on section
+  sectionPokeData.appendChild(idAndName);
 
   //Types
   const divTypes = putTypes(pokemon.types);
   sectionPokeData.appendChild(divTypes);
 
   //Items
-  const divItems = putItems(pokemon.items);
-  sectionPokeData.appendChild(divItems);
+  // const divItems = putItems(pokemon.items);
+  // sectionPokeData.appendChild(divItems);
 
   elements.results.appendChild(sectionPokeData);
 
@@ -79,24 +87,15 @@ export const createImg = (img) => {
   return divImg;
 };
 
-export const createStyle = (img, types) => {
-  const colorOne = colorTypes[types[0].type.name];
-  const colorTwo = types[1]
-    ? colorTypes[types[1].type.name]
-    : colorTypes.default;
-  img.style.background = `radial-gradient(${colorTwo} 33%, ${colorOne} 33%)`;
-  img.style.backgroundSize = " 5px 5px";
-};
-
 export const putName = (namePoke) => {
-  const divName = document.createElement("div");
+  const divName = document.createElement("span");
   divName.className = "name";
   divName.textContent = namePoke;
   return divName;
 };
 
 export const putId = (pokeId) => {
-  const divId = document.createElement("div");
+  const divId = document.createElement("span");
   divId.className = "number";
   divId.textContent = `Nº ${pokeId} `;
   return divId;
@@ -142,4 +141,10 @@ const showAbilities = (div, ability) => {
     ab.textContent = ability.ability.name;
     div.appendChild(ab);
   });
+};
+
+//Create table for types, weaknesses  and strengths
+const multiplier = (pokemonType, types) => {
+  const multiplier = [];
+  const pokemultiplier = {};
 };

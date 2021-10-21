@@ -999,7 +999,7 @@ export const types = {
     },
     defense: {
       half: ["bug", "fairy", "fire", "grass", "ice", "steel"],
-      double: ["bug", "fire", "flying", "ice", "poison"],
+      double: ["rock", "water", "ground"],
       zero: [],
     },
   },
