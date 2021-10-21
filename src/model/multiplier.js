@@ -1,4 +1,4 @@
-export const multiplier = (pokemonType, types) => {
+export const multiplierFuntion = (pokemonType, types) => {
   let inmune = [];
   let strongly = [];
   let weak = [];
@@ -80,8 +80,8 @@ export const multiplier = (pokemonType, types) => {
   }
 
   //Remove repeat type
-  doubleTemp = weak.filter((el) => !veryWeak.includes(el));
-  resistsTemp = resists.filter((el) => !weak.includes(el));
+  let doubleTemp = weak.filter((el) => !veryWeak.includes(el));
+  let resistsTemp = resists.filter((el) => !weak.includes(el));
   weak = doubleTemp.filter((el) => !resists.includes(el));
   resists = resistsTemp;
 

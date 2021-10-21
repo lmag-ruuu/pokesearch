@@ -9,7 +9,7 @@ export default class Search {
       const response = await axios.get(
         `https://pokeapi.co/api/v2/pokemon/${this.query.toLowerCase()}`
       );
-      console.log(response);
+      // console.log(response);
       this.data = response.data;
     } catch (error) {
       alert(`Type ${this.query} not found`);

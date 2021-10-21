@@ -1,5 +1,6 @@
 import { elements, colorTypes } from "./base";
 import { types } from "../model/dictionary";
+import { multiplierFuntion } from "../model/multiplier";
 
 export const renderPokeData = (pokemon) => {
   //Create a container for show all pokemon data
@@ -33,9 +34,15 @@ export const renderPokeData = (pokemon) => {
   //add on section
   sectionPokeData.appendChild(idAndName);
 
+  //1st, get types
+  let type = getTypes(pokemon.types);
+  //Get defenses multiplier
+  const mult = multiplierFuntion(type, types);
+  console.log(mult);
+
   //Types
-  const divTypes = putTypes(pokemon.types);
-  sectionPokeData.appendChild(divTypes);
+  // const divTypes = putTypes(pokemon.types);
+  // sectionPokeData.appendChild(divTypes);
 
   //Items
   // const divItems = putItems(pokemon.items);
@@ -102,6 +109,7 @@ export const putId = (pokeId) => {
 };
 
 export const putTypes = (types) => {
+  console.log(types);
   const typeId = document.createElement("div");
   types.forEach((type) => {
     const typeText = document.createElement("span");
@@ -143,8 +151,8 @@ const showAbilities = (div, ability) => {
   });
 };
 
-//Create table for types, weaknesses  and strengths
-const multiplier = (pokemonType, types) => {
-  const multiplier = [];
-  const pokemultiplier = {};
+//Get types
+const getTypes = (typesPoke) => {
+  const result = typesPoke.map((type) => type.type.name);
+  return result;
 };
