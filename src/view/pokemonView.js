@@ -48,7 +48,7 @@ export const renderPokeData = (pokemon) => {
   // const divItems = putItems(pokemon.items);
   // sectionPokeData.appendChild(divItems);
 
-  elements.results.appendChild(sectionPokeData);
+  divContainer.appendChild(sectionPokeData);
 
   //2º SECTION
   const sectionPokeStats = document.createElement("section");
@@ -78,8 +78,10 @@ export const renderPokeData = (pokemon) => {
   //add Colum on stats section
   sectionPokeStats.appendChild(divColum);
 
+  divContainer.appendChild(sectionPokeStats);
+
   //add new section on container
-  elements.results.appendChild(sectionPokeStats);
+  elements.results.appendChild(divContainer);
 };
 
 export const createImg = (img) => {

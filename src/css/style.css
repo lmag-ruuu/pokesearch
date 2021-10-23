@@ -221,3 +221,15 @@ a {
   width: 15rem;
   height: 15rem;
 }
+
+.result-container {
+  border: 5px solid #fa5252;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-image: linear-gradient(
+    to top right,
+    rgba(255, 135, 135, 0.35),
+    rgba(255, 245, 245, 0.35)
+  );
+}
