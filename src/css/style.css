@@ -233,7 +233,7 @@ a {
 }
 
 .result-allData {
-  border: 5px solid #fa5252;
+  align-items: center;
   border-radius: 4px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -242,4 +242,44 @@ a {
     rgba(255, 135, 135, 0.35),
     rgba(255, 245, 245, 0.35)
   );
+}
+
+.content-img-type {
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: flex-end;
+}
+
+.content-stats div {
+  align-self: center;
+  justify-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+table {
+  font-size: 18px;
+  border-collapse: collapse;
+  align-self: flex-start;
+}
+
+th {
+  padding: 8px 16px;
+  text-align: right;
+}
+td {
+  padding: 8px 16px;
+}
+
+td span {
+  margin-right: 1rem;
+  padding: 0 1rem;
+  border-radius: 4px;
+}
+
+figure img {
+  width: 220px;
 }

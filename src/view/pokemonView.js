@@ -49,7 +49,7 @@ export const renderPokeData = (pokemon) => {
 
   //2º SECTION////////////////////////////////////////////////////////////////////////
   const sectionPokeStats = document.createElement("section");
-  sectionPokeStats.className = "section2";
+  sectionPokeStats.className = "content-stats";
 
   //Div inside section
   const divColum = document.createElement("div");

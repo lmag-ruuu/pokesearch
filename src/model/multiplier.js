@@ -32,15 +32,14 @@ export const multiplierFuntion = (pokemonType, types) => {
   //STRONGLY resist?
   // console.log(defenses.length);
   const halfOne = defenses[0]["half"];
-  for (let i = 0; i < halfOne.length; i++) {
-    // console.log(halfOne[i])
+  halfOne.forEach((half) => {
     if (defenses.length > 1) {
-      let stronglie = defenses[1]["half"].find((el) => el === halfOne[i]);
+      let stronglie = defenses[1]["half"].find((el) => el === half);
       if (stronglie !== undefined) {
         strongly.push(stronglie);
       }
     }
-  }
+  });
 
   //just RESISTS
 
