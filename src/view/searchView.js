@@ -1,5 +1,11 @@
 import { elements } from "./base.js";
-import { createImg, putId, putName, putTypes } from "./pokemonView.js";
+import {
+  createImg,
+  putId,
+  putName,
+  putTypes,
+  getTypes,
+} from "./pokemonView.js";
 
 //Get and clear input!
 export const getInput = () => elements.searchField.value;
@@ -61,7 +67,8 @@ export const renderPokemon = (pokemon) => {
   pokeCard.appendChild(pokeName);
 
   //Types
-  const divTypes = putTypes(pokemon.types);
+  const types = getTypes(pokemon.types);
+  const divTypes = putTypes(types);
   divTypes.className = "type";
   //Add type on card
   pokeCard.appendChild(divTypes);

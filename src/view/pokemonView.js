@@ -36,14 +36,14 @@ export const renderPokeData = (pokemon) => {
 
   //1st, get types
   let type = getTypes(pokemon.types);
+  console.log(`type pokemon ${type}`);
   //Get defenses multiplier
   const mult = multiplierFuntion(type, types);
   console.log(mult);
 
-  //Types
-  // const divTypes = putTypes(pokemon.types);
-  // sectionPokeData.appendChild(divTypes);
-
+  //Lets create table
+  const table = renderTable(type, mult);
+  sectionPokeData.appendChild(table);
   //Items
   // const divItems = putItems(pokemon.items);
   // sectionPokeData.appendChild(divItems);
@@ -59,12 +59,6 @@ export const renderPokeData = (pokemon) => {
 
   //table inside div
   const tableStat = document.createElement("table");
-
-  //colgroup for table
-  const colGrp = document.createElement("colgroup");
-  colGrp.setAttribute("span", 2);
-  colGrp.className = "columns";
-  tableStat.appendChild(colGrp);
 
   //Fill table
   fillTable(tableStat, pokemon.stats);
@@ -109,12 +103,12 @@ export const putId = (pokeId) => {
 };
 
 export const putTypes = (types) => {
-  console.log(types);
+  // console.log(types);
   const typeId = document.createElement("div");
   types.forEach((type) => {
     const typeText = document.createElement("span");
-    typeText.style.backgroundColor = colorTypes[type.type.name];
-    typeText.textContent = type.type.name;
+    typeText.style.backgroundColor = colorTypes[type];
+    typeText.textContent = type;
     typeId.appendChild(typeText);
   });
   return typeId;
@@ -135,7 +129,7 @@ const fillTable = (table, stats) => {
     const trow = document.createElement("tr");
     const thName = document.createElement("th");
     thName.textContent = stat.stat.name;
-    const thStat = document.createElement("th");
+    const thStat = document.createElement("td");
     thStat.textContent = stat.base_stat;
     trow.appendChild(thName);
     trow.appendChild(thStat);
@@ -152,7 +146,65 @@ const showAbilities = (div, ability) => {
 };
 
 //Get types
-const getTypes = (typesPoke) => {
+export const getTypes = (typesPoke) => {
   const result = typesPoke.map((type) => type.type.name);
   return result;
+};
+
+//create table weakness and type
+const renderTable = (types, multi) => {
+  //First, create table
+  const table = document.createElement("table");
+  table.className = "defense-table";
+  //Create tr for types
+  const trType = document.createElement("tr");
+  const thType = document.createElement("th");
+  thType.textContent = "Type";
+  const tdType = document.createElement("td");
+  const typeData = putTypes(types);
+  tdType.appendChild(typeData);
+  trType.appendChild(thType);
+  trType.appendChild(tdType);
+  table.appendChild(trType);
+  /////////////////////////////////////////////////////////
+  //inmune?
+  if (multi.inmune) {
+    const trImmune = giveMeTableRow("Inmune to", multi.inmune);
+    table.appendChild(trImmune);
+  }
+  //Strongly resist
+  if (multi.strongly) {
+    const trStrongly = giveMeTableRow("Strongly resist", multi.strongly);
+    table.appendChild(trStrongly);
+  }
+  //just resist
+  if (multi.resists) {
+    const trResist = giveMeTableRow("Resist", multi.resists);
+    table.appendChild(trResist);
+  }
+  //just resist
+  if (multi.weak) {
+    const trWeak = giveMeTableRow("Weak", multi.weak);
+    table.appendChild(trWeak);
+  }
+  //just resist
+  if (multi.veryWeak) {
+    const trVeryWeak = giveMeTableRow("Very Weak to", multi.veryWeak);
+    table.appendChild(trVeryWeak);
+  }
+
+  return table;
+};
+
+const giveMeTableRow = (element, value) => {
+  const tr = document.createElement("tr");
+  const th = document.createElement("th");
+  th.textContent = element;
+  tr.appendChild(th);
+  const td = document.createElement("td");
+  const tdData = putTypes(value);
+  td.appendChild(tdData);
+  tr.appendChild(td);
+
+  return tr;
 };

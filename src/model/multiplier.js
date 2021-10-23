@@ -95,7 +95,7 @@ export const multiplierFuntion = (pokemonType, types) => {
     multiplier.strongly = strongly;
   }
   if (weak.length > 0) {
-    multiplier.double = weak;
+    multiplier.weak = weak;
   }
   if (veryWeak.length > 0) {
     multiplier.veryWeak = veryWeak;
