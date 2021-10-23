@@ -234,6 +234,7 @@ a {
 
 .result-allData {
   align-items: center;
+  box-shadow: 0 0 6px 0 #a61e4d;
   border-radius: 4px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -269,9 +270,11 @@ table {
 th {
   padding: 8px 16px;
   text-align: right;
+  color: #495057;
 }
 td {
   padding: 8px 16px;
+  color: #343a40;
 }
 
 td span {
@@ -282,4 +285,15 @@ td span {
 
 figure img {
   width: 220px;
+}
+
+.number {
+  font-size: 14px;
+  padding-right: 0.8rem;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 16px;
+  color: #343a40;
 }

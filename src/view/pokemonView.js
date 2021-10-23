@@ -71,8 +71,10 @@ export const renderPokeData = (pokemon) => {
   divColum.appendChild(abTable);
 
   //Items
-  const tableItems = putItems(pokemon.items);
-  divColum.appendChild(tableItems);
+  if (pokemon.items.length > 0) {
+    const tableItems = putItems(pokemon.items);
+    divColum.appendChild(tableItems);
+  }
 
   //add Colum on stats section
   sectionPokeStats.appendChild(divColum);
