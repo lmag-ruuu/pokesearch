@@ -81,4 +81,5 @@ export const renderPokemon = (pokemon) => {
 
 export const clearPokemon = () => {
   elements.results.innerHTML = "";
+  elements.resultCont.innerHTML = "";
 };

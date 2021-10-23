@@ -6,6 +6,7 @@ export const elements = {
   results: document.querySelector(".results"),
   searchInput: document.querySelector(".search-input"),
   results: document.querySelector(".results"),
+  resultCont: document.querySelector(".result-container"),
   title: document.querySelector(".title"),
 };
 

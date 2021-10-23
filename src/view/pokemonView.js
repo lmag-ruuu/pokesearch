@@ -5,7 +5,7 @@ import { multiplierFuntion } from "../model/multiplier";
 export const renderPokeData = (pokemon) => {
   //Create a container for show all pokemon data
   const divContainer = document.createElement("div");
-  divContainer.className = "result-container";
+  divContainer.className = "result-allData";
 
   //Create First section
   const sectionPokeData = document.createElement("section");
@@ -36,21 +36,18 @@ export const renderPokeData = (pokemon) => {
 
   //1st, get types
   let type = getTypes(pokemon.types);
-  console.log(`type pokemon ${type}`);
+  // console.log(`type pokemon ${type}`);
   //Get defenses multiplier
   const mult = multiplierFuntion(type, types);
-  console.log(mult);
+  // console.log(mult);
 
   //Lets create table
   const table = renderTable(type, mult);
   sectionPokeData.appendChild(table);
-  //Items
-  // const divItems = putItems(pokemon.items);
-  // sectionPokeData.appendChild(divItems);
 
   divContainer.appendChild(sectionPokeData);
 
-  //2º SECTION
+  //2º SECTION////////////////////////////////////////////////////////////////////////
   const sectionPokeStats = document.createElement("section");
   sectionPokeStats.className = "section2";
 
@@ -65,15 +62,17 @@ export const renderPokeData = (pokemon) => {
 
   //Add table on divColum
   divColum.appendChild(tableStat);
-  divColum.appendChild(document.createElement("br"));
 
   //fill abilities
-  const divAbilities = document.createElement("div");
-  divAbilities.textContent = `Abilities`;
-  showAbilities(divAbilities, pokemon.abilities);
+  const abil = getAbility(pokemon.abilities);
+  const abTable = getAbTable(abil);
 
   //add abilites on colum
-  divColum.appendChild(divAbilities);
+  divColum.appendChild(abTable);
+
+  //Items
+  const tableItems = putItems(pokemon.items);
+  divColum.appendChild(tableItems);
 
   //add Colum on stats section
   sectionPokeStats.appendChild(divColum);
@@ -81,7 +80,7 @@ export const renderPokeData = (pokemon) => {
   divContainer.appendChild(sectionPokeStats);
 
   //add new section on container
-  elements.results.appendChild(divContainer);
+  elements.resultCont.appendChild(divContainer);
 };
 
 export const createImg = (img) => {
@@ -117,40 +116,67 @@ export const putTypes = (types) => {
 };
 
 export const putItems = (items) => {
-  const itemId = document.createElement("div");
+  const itemTable = document.createElement("table");
+  const itemTr = document.createElement("tr");
+  const itemTh = document.createElement("th");
+  itemTh.textContent = "Held Items";
+  itemTr.appendChild(itemTh);
   items.forEach((item) => {
-    const itemText = document.createElement("div");
-    itemText.textContent = item.item.name;
-    itemId.appendChild(itemText);
+    const itemTd = document.createElement("td");
+    itemTd.textContent = item.item.name;
+    itemTr.appendChild(itemTd);
   });
-  return itemId;
+  itemTable.appendChild(itemTr);
+  return itemTable;
+};
+//Get types
+export const getTypes = (typesPoke) => {
+  const result = typesPoke.map((type) => type.type.name);
+  return result;
 };
 
 const fillTable = (table, stats) => {
   stats.forEach((stat) => {
+    // console.log(stat);
     const trow = document.createElement("tr");
     const thName = document.createElement("th");
     thName.textContent = stat.stat.name;
     const thStat = document.createElement("td");
-    thStat.textContent = stat.base_stat;
+    const spanStat = document.createElement("span");
+    spanStat.textContent = stat.base_stat;
+    const color = getColor(stat.base_stat);
+    spanStat.style.backgroundColor = color;
+    spanStat.style.paddingRight = `${stat.base_stat}px`;
+    thStat.appendChild(spanStat);
+
     trow.appendChild(thName);
     trow.appendChild(thStat);
     table.appendChild(trow);
   });
 };
 
-const showAbilities = (div, ability) => {
-  ability.forEach((ability) => {
-    const ab = document.createElement("div");
-    ab.textContent = ability.ability.name;
-    div.appendChild(ab);
-  });
+const getColor = (stat) => {
+  // console.log(stat);
+  let color;
+  if (stat >= 120) {
+    color = "#38d9a9";
+    return color;
+  } else if (stat >= 90) {
+    color = "#a9e34b";
+    return color;
+  } else if (stat >= 60) {
+    color = "#ffd43b";
+    return color;
+  } else {
+    color = "#e03131";
+    return color;
+  }
 };
 
-//Get types
-export const getTypes = (typesPoke) => {
-  const result = typesPoke.map((type) => type.type.name);
-  return result;
+const getAbility = (ability) => {
+  const ab = [];
+  ability.forEach((abi) => ab.push(abi.ability.name));
+  return ab;
 };
 
 //create table weakness and type
@@ -209,4 +235,19 @@ const giveMeTableRow = (element, value) => {
   tr.appendChild(td);
 
   return tr;
+};
+
+const getAbTable = (ab) => {
+  const table = document.createElement("table");
+  const tr = document.createElement("tr");
+  const th = document.createElement("th");
+  th.textContent = "Abilities:";
+  tr.appendChild(th);
+  ab.forEach((ability) => {
+    const td = document.createElement("td");
+    td.textContent = ability;
+    tr.appendChild(td);
+  });
+  table.appendChild(tr);
+  return table;
 };
