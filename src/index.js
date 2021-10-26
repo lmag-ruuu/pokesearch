@@ -1,4 +1,5 @@
 import "../src/css/style.css";
+import "../src/css/queries.css";
 import Search from "./model/Search";
 import Pokemon from "./model/Pokemon";
 import * as pokemonView from "./view/pokemonView";

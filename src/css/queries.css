@@ -1,0 +1,55 @@
+@media (max-width: 56em) {
+  .title span {
+    font-size: 8.4rem;
+  }
+  .results {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .pokesearch {
+    height: 90rem;
+  }
+  .result-allData {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 44em) {
+  .title span {
+    font-size: 6.8rem;
+  }
+  .results {
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 2rem;
+  }
+  .pokesearch {
+    height: 118rem;
+  }
+}
+@media (max-width: 28em) {
+  .title span {
+    font-size: 5.8rem;
+  }
+  .results {
+    grid-template-columns: 1fr;
+    padding-top: 6rem;
+  }
+  .result-container {
+    margin: 0;
+  }
+  .pokesearch {
+    height: 195rem;
+    padding: 1rem 0 6rem 0;
+  }
+  .search input {
+    width: 35rem;
+  }
+}
+@media (max-width: 22em) {
+  .title span {
+    font-size: 4rem;
+  }
+  .search input {
+    width: 24rem;
+  }
+}
