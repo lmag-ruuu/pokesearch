@@ -890,7 +890,6 @@ export const dictionary = [
   "zamazenta",
   "eternatus",
   "kubfu",
-  "urshifu",
   "zarude",
   "regieleki",
   "regidrago",
