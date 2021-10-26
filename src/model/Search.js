@@ -12,7 +12,7 @@ export default class Search {
       // console.log(response);
       this.data = response.data;
     } catch (error) {
-      alert(`Type ${this.query} not found`);
+      alert(`Pokemon ${this.query} not found`);
     }
   }
 }
