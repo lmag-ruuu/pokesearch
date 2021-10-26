@@ -245,18 +245,18 @@ a {
   );
 }
 
-.content-img-type {
+.content-img-type,
+.content-stats {
   justify-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-self: flex-end;
 }
 
 .content-stats div {
+  display: flex;
   align-self: center;
   justify-self: flex-start;
-  display: flex;
   flex-direction: column;
   gap: 10px;
 }

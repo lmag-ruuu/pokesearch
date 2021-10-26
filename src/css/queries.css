@@ -6,7 +6,11 @@
     grid-template-columns: repeat(3, 1fr);
   }
   .pokesearch {
-    height: 90rem;
+    height: 105rem;
+    padding: 1rem 0 6rem 0;
+  }
+  .result-container {
+    margin: 0;
   }
   .result-allData {
     grid-template-columns: 1fr;
@@ -18,17 +22,41 @@
   .title span {
     font-size: 6.8rem;
   }
+  .pokesearch {
+    height: 200rem;
+  }
+  .search input {
+    width: 35rem;
+  }
   .results {
     grid-template-columns: repeat(2, 1fr);
     padding-top: 2rem;
   }
-  .pokesearch {
-    height: 118rem;
+  .result-container {
+    margin: 0;
+  }
+  table {
+    align-self: center;
+  }
+  th {
+    padding: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  tr {
+    display: grid;
+  }
+  td div {
+    display: grid;
+  }
+  td span {
+    padding: 0.8rem;
+    margin: 1rem;
   }
 }
 @media (max-width: 28em) {
   .title span {
-    font-size: 5.8rem;
+    font-size: 5rem;
   }
   .results {
     grid-template-columns: 1fr;
@@ -37,12 +65,11 @@
   .result-container {
     margin: 0;
   }
-  .pokesearch {
-    height: 195rem;
-    padding: 1rem 0 6rem 0;
-  }
   .search input {
-    width: 35rem;
+    width: 30rem;
+  }
+  .pokesearch {
+    height: 210rem;
   }
 }
 @media (max-width: 22em) {
