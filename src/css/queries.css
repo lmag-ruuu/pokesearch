@@ -23,7 +23,7 @@
     font-size: 6.8rem;
   }
   .pokesearch {
-    height: 200rem;
+    height: 230rem;
   }
   .search input {
     width: 35rem;
@@ -67,9 +67,6 @@
   }
   .search input {
     width: 30rem;
-  }
-  .pokesearch {
-    height: 210rem;
   }
 }
 @media (max-width: 22em) {
