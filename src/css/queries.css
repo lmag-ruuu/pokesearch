@@ -23,7 +23,7 @@
     font-size: 6.8rem;
   }
   .pokesearch {
-    height: 230rem;
+    height: 195rem;
   }
   .search input {
     width: 35rem;
@@ -45,13 +45,20 @@
   }
   tr {
     display: grid;
+    grid-template-columns: 15rem 1fr;
+    align-items: center;
+    box-shadow: 0 0px 8px 0 rgba(230, 72, 72, 0.1);
   }
   td div {
     display: grid;
+    grid-template-columns: 1fr 1fr;
   }
   td span {
     padding: 0.8rem;
     margin: 1rem;
+  }
+  .content-stats table tr {
+    margin: 0.8rem;
   }
 }
 @media (max-width: 28em) {
