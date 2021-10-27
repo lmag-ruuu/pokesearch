@@ -262,6 +262,7 @@ a {
 }
 
 table {
+  font-weight: 700;
   font-size: 18px;
   border-collapse: collapse;
   align-self: flex-start;
@@ -275,6 +276,7 @@ th {
 td {
   padding: 8px 16px;
   color: #343a40;
+  text-shadow: 1px 1px 1px #fff;
 }
 
 td span {
