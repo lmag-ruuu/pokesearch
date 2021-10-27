@@ -10,7 +10,9 @@
     padding: 1rem 0 6rem 0;
   }
   .result-container {
-    margin: 0;
+    margin-top: 2rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
   }
   .result-allData {
     grid-template-columns: 1fr;
@@ -33,7 +35,9 @@
     padding-top: 2rem;
   }
   .result-container {
-    margin: 0;
+    margin-top: 0;
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
   table {
     align-self: center;
@@ -69,9 +73,6 @@
     grid-template-columns: 1fr;
     padding-top: 6rem;
   }
-  .result-container {
-    margin: 0;
-  }
   .search input {
     width: 30rem;
   }
@@ -82,5 +83,8 @@
   }
   .search input {
     width: 24rem;
+  }
+  .result-container {
+    margin: 0;
   }
 }
