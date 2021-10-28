@@ -148,7 +148,7 @@ const fillTable = (table, stats) => {
     spanStat.textContent = stat.base_stat;
     const color = getColor(stat.base_stat);
     spanStat.style.backgroundColor = color;
-    spanStat.style.paddingRight = `${stat.base_stat}px`;
+    spanStat.style.paddingRight = `${stat.base_stat * 0.5}px`;
     thStat.appendChild(spanStat);
 
     trow.appendChild(thName);
