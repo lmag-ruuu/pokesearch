@@ -170,7 +170,7 @@ const getColor = (stat) => {
     color = "#ffd43b";
     return color;
   } else {
-    color = "#e03131";
+    color = "#ff8787";
     return color;
   }
 };

@@ -21,7 +21,7 @@ export const colorTypes = {
   ground: "#e0c068",
   dragon: "#7038f8",
   steel: "#b8b8d0",
-  fighting: "#c03028",
+  fighting: "#fa5252",
   fairy: "#F98CFF",
   dark: "#705848",
   electric: "#f8d030",
